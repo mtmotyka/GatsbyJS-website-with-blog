@@ -1,53 +1,68 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { CookiesProvider, withCookies } from "react-cookie"
 
 import Header from "./header"
-import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import "../assets/sass/style.scss"
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+class Layout extends React.Component {
+  state = {
+    cookieOpen: false,
+  }
+  componentDidMount() {
+    const { cookies } = this.props
+    const isAcceptedCoookie = !!cookies.get("cookie-accept-blog")
+    !isAcceptedCoookie && this.setState({ cookieOpen: true })
+  }
+
+  acceptCookie = () => {
+    const { cookies } = this.props
+
+    const promiseSetCookie = new Promise(resolve =>
+      resolve(cookies.set("cookie-accept-alicja", "active", { path: "/" }))
+    )
+    promiseSetCookie.then(() => {
+      this.setState({ cookieOpen: false })
+    })
+  }
+
+  render() {
+    const { children } = this.props
+    return (
+      <>
+        <CookiesProvider>
+          <Header />
+          <main>{children}</main>
+          {
+            // <div
+            //   className={`cookie-baner ${this.state.cookieOpen ? "open" : ""}`}
+            //   id="mainBelt"
+            // >
+            //   <p>This Site Uses Cookies</p>
+            //
+            //   <div>
+            //     <button
+            //       className="btn-custom btn-custom--small btn-custom--green"
+            //       onClick={this.acceptCookie}
+            //     >
+            //       Ok
+            //     </button>
+            //
+            //     <a
+            //       href="/cookies-policy/"
+            //       className="link"
+            //       target="_blank"
+            //       rel="noopener noreferrer"
+            //     >
+            //       Read more
+            //     </a>
+            //   </div>
+            // </div>
+          }
+        </CookiesProvider>
+      </>
+    )
+  }
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default withCookies(Layout)

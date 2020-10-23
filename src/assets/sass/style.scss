@@ -1,0 +1,111 @@
+/**
+* styles.scss
+* ---
+* Main `sass` file. Import here `sass` files
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lato:wght@300;400;700&display=swap&subset=latin-ext');
+
+@import "modules/bootstrap/bootstrap";
+@import "modules/bootstrap/mixins/_breakpoints";
+@import "modules/_variables";
+@import "modules/_mixins";
+@import "modules/_hamburgers";
+@import "modules/_slick";
+@import "modules/_slick-theme";
+
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1198px) {
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: $text-color;
+  font-family: $font-lato;
+  font-style: normal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: 300;
+  overflow-x: hidden;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+html {
+  height: 100%;
+}
+b,
+strong {
+  font-weight: 700;
+}
+.center,
+.aligncenter {
+  text-align: center;
+  margin: 0 auto;
+}
+p {
+  color: $text-color;
+  margin: 0px;
+}
+a {
+  color: $text-color;
+  margin: 0px;
+  transition: all 150ms linear;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+svg {
+  transition: all 150ms linear;
+  path {
+    transition: all 150ms linear;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-color;
+  font-weight: 300;
+  margin: 0px;
+  line-height: 1.1;
+}
+ul,
+ol,
+address {
+  margin: 0px;
+  padding: 0px;
+}
+.appleFix {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.anchor {
+  display: block;
+  height: 74px;
+  margin-top: -74px;
+  visibility: hidden;
+}
+
+// Custom css
+@import "components/_elements";
+@import "components/_header";
+@import "components/_footer";
+
+// Media
+@import "modules/_media";
