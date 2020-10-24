@@ -1,6 +1,6 @@
 .btn {
   display: inline-block;
-  color: #fff;
+  color: #fff !important;
   text-align: center;
   border-radius: 50px;
   padding: 15px 50px 15px 35px;
@@ -46,5 +46,30 @@
     &:after {
       right: 25px;
     }
+  }
+
+  &--small {
+    padding: 10px 25px;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--white {
+    background: #fff;
+    color: $color-dark-blue !important;
+  }
+
+  &--black-shadow {
+    -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  &--white-shadow {
+    -webkit-box-shadow: 0px 0px 30px -2px rgba(255, 255, 255, 0.7);
+    -moz-box-shadow: 0px 0px 30px -2px rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 30px -2px rgba(255, 255, 255, 0.7);
   }
 }

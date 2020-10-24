@@ -1,38 +1,40 @@
-import React from "react"
-import { CookiesProvider, withCookies } from "react-cookie"
+import React from 'react';
+import { CookiesProvider, withCookies } from 'react-cookie';
 
-import Header from "./header"
+import Header from './header';
+import Footer from './footer';
 
-import "../assets/sass/style.scss"
+import '../assets/sass/style.scss';
 
 class Layout extends React.Component {
   state = {
     cookieOpen: false,
-  }
+  };
   componentDidMount() {
-    const { cookies } = this.props
-    const isAcceptedCoookie = !!cookies.get("cookie-accept-blog")
-    !isAcceptedCoookie && this.setState({ cookieOpen: true })
+    const { cookies } = this.props;
+    const isAcceptedCoookie = !!cookies.get('cookie-accept-blog');
+    !isAcceptedCoookie && this.setState({ cookieOpen: true });
   }
 
   acceptCookie = () => {
-    const { cookies } = this.props
+    const { cookies } = this.props;
 
     const promiseSetCookie = new Promise(resolve =>
-      resolve(cookies.set("cookie-accept-alicja", "active", { path: "/" }))
-    )
+      resolve(cookies.set('cookie-accept-alicja', 'active', { path: '/' })),
+    );
     promiseSetCookie.then(() => {
-      this.setState({ cookieOpen: false })
-    })
-  }
+      this.setState({ cookieOpen: false });
+    });
+  };
 
   render() {
-    const { children } = this.props
+    const { children } = this.props;
     return (
       <>
         <CookiesProvider>
           <Header />
           <main>{children}</main>
+          <Footer />
           {
             // <div
             //   className={`cookie-baner ${this.state.cookieOpen ? "open" : ""}`}
@@ -61,8 +63,8 @@ class Layout extends React.Component {
           }
         </CookiesProvider>
       </>
-    )
+    );
   }
 }
 
-export default withCookies(Layout)
+export default withCookies(Layout);
