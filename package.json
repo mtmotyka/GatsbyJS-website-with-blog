@@ -29,7 +29,10 @@
     "scroll-to-element": "^2.0.3"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.1.0"
   },
   "keywords": [
     "gatsby"
@@ -50,5 +53,10 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+ }
 }

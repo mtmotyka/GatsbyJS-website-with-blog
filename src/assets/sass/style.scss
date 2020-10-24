@@ -4,28 +4,19 @@
 * Main `sass` file. Import here `sass` files
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lato:wght@300;400;700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap&subset=latin-ext');
 
-@import "modules/bootstrap/bootstrap";
-@import "modules/bootstrap/mixins/_breakpoints";
-@import "modules/_variables";
-@import "modules/_mixins";
-@import "modules/_hamburgers";
-@import "modules/_slick";
-@import "modules/_slick-theme";
+@import 'modules/bootstrap/bootstrap';
+@import 'modules/bootstrap/mixins/_breakpoints';
+@import 'modules/_variables';
+@import 'modules/_mixins';
+@import 'modules/_hamburgers';
+@import 'modules/_slick';
+@import 'modules/_slick-theme';
 
-@media (min-width: 1441px) {
-  .container {
-    max-width: 1440px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 1198px) {
-  .container {
-    max-width: 100%;
-    width: 100%;
-    padding: 0 15px;
-  }
+.container-fluid {
+  padding-left: 8.33%;
+  padding-right: 8.33%;
 }
 
 body {
@@ -56,9 +47,12 @@ strong {
 p {
   color: $text-color;
   margin: 0px;
+  font-size: $font-size-base;
+  font-weight: $light;
 }
 a {
   color: $text-color;
+  font-weight: $light;
   margin: 0px;
   transition: all 150ms linear;
   cursor: pointer;
@@ -80,10 +74,23 @@ h3,
 h4,
 h5,
 h6 {
-  color: $text-color;
+  color: $color-header;
   font-weight: 300;
   margin: 0px;
-  line-height: 1.1;
+  line-height: 1.7;
+}
+h1 {
+  font-size: 44px;
+}
+h2 {
+  font-size: 39px;
+  font-weight: $extra-light;
+
+  &.small {
+    font-size: 30px;
+    font-weight: $semi-bold;
+    margin-bottom: 35px;
+  }
 }
 ul,
 ol,
@@ -103,9 +110,13 @@ address {
 }
 
 // Custom css
-@import "components/_elements";
-@import "components/_header";
-@import "components/_footer";
+@import 'components/_elements';
+@import 'components/_header';
+@import 'components/_footer';
+
+// Pages
+@import 'pages/_page-home';
 
 // Media
-@import "modules/_media";
+@import 'modules/_media';
+@import 'modules/_helpers';
