@@ -2,12 +2,13 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import ContactForm from '../components/contactForm';
 import { Link } from 'gatsby';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section className="hero-section container-fluid">
+    <section className="hero-section">
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-md-5">
@@ -51,7 +52,7 @@ const IndexPage = () => (
     <section className="help-section">
       <div className="container-fluid">
         <div className="row align-items-center">
-          <div className="col-md-3">
+          <div className="col-lg-3 col-md-4 help-section__text-col">
             <h2 className="help-section__title small">
               How we can <br /> help you?
             </h2>
@@ -62,13 +63,13 @@ const IndexPage = () => (
               Our Services
             </a>
           </div>
-          <div className="col-md-8">
+          <div className="col-lg-9 col-md-8">
             <div className="icons-container">
               <div className="icons-container__single-item single-item">
                 <img
                   src={require('../assets/img/ico-checklist.png')}
                   alt=""
-                  className="img-fluid single-item__icon"
+                  className="img-fluid single-item__icon img-fluid"
                 />
                 <p className="single-item__title">
                   To-do list <br /> for every day
@@ -78,7 +79,7 @@ const IndexPage = () => (
                 <img
                   src={require('../assets/img/ico-research.png')}
                   alt=""
-                  className="img-fluid single-item__icon"
+                  className="img-fluid single-item__icon img-fluid"
                 />
                 <p className="single-item__title">
                   Research for <br /> fresh content
@@ -88,7 +89,7 @@ const IndexPage = () => (
                 <img
                   src={require('../assets/img/ico-results.png')}
                   alt=""
-                  className="img-fluid single-item__icon"
+                  className="img-fluid single-item__icon img-fluid"
                 />
                 <p className="single-item__title">
                   Progresive <br /> results
@@ -98,7 +99,7 @@ const IndexPage = () => (
                 <img
                   src={require('../assets/img/ico-presentation.png')}
                   alt=""
-                  className="img-fluid single-item__icon"
+                  className="img-fluid single-item__icon img-fluid"
                 />
                 <p className="single-item__title">
                   Quality content & <br /> clean digital image
@@ -124,7 +125,7 @@ const IndexPage = () => (
         <img
           src={require('../assets/img/video-thumbnail.png')}
           alt="video"
-          className="video-section__video-example"
+          className="video-section__video-example img-fluid"
         />
       </div>
     </section>
@@ -136,7 +137,7 @@ const IndexPage = () => (
           See how easy is to use Kallyas Social Media Management.
         </p>
         <div className="row row--1 align-items-center">
-          <div className="col-md-4">
+          <div className="col-lg-4 col-md-6 column column--text">
             <h2 className="line-top">
               Real-time Informations & <br />
               Detailed Analytics
@@ -150,7 +151,7 @@ const IndexPage = () => (
               sint occaecat cupidatat.
             </p>
           </div>
-          <div className="col-md-8">
+          <div className="col-lg-8 col-md-6 column column--image">
             <img
               src={require('../assets/img/about-section-img-1.png')}
               alt=""
@@ -159,14 +160,14 @@ const IndexPage = () => (
           </div>
         </div>
         <div className="row row--2 align-items-center">
-          <div className="col-md-8">
+          <div className="col-lg-8 col-md-6 column column--image">
             <img
               src={require('../assets/img/about-section-img-2.png')}
               alt=""
               className="img-fluid about-section__image image image--left"
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-lg-4 col-md-6 column column--text">
             <h2 className="text-right line-top">
               Social Media Platforms <br />
               Plugins Addes
@@ -182,7 +183,7 @@ const IndexPage = () => (
           </div>
         </div>
         <div className="row row--3 align-items-center">
-          <div className="col-md-4">
+          <div className="col-lg-4 col-md-5 column column--text">
             <h2 className="line-top">
               Connect Everytime With <br />
               Other People
@@ -196,7 +197,7 @@ const IndexPage = () => (
               sint occaecat cupidatat.
             </p>
           </div>
-          <div className="col-md-8 multi-col">
+          <div className="col-lg-8 col-md-7 column column--image multi-col">
             <img
               src={require('../assets/img/about-section-img-3.png')}
               alt=""
@@ -327,6 +328,12 @@ const IndexPage = () => (
             Pricing
           </Link>
         </div>
+      </div>
+    </section>
+    <section className="contact-section">
+      <div className="container-fluid">
+        <h2 className="contact-section__title text-center">Contact Us</h2>
+        <ContactForm />
       </div>
     </section>
   </Layout>

@@ -1,0 +1,14 @@
+.subpage-header {
+  min-height: 400px;
+  background-image: url(../img/subpage-header-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+  }
+}

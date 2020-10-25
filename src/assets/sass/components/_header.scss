@@ -2,14 +2,88 @@
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 70px 16.66%;
+  padding: 70px 16.66% 0 16.66%;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 999;
+  transition: all 0.25s;
+
+  @include media-breakpoint-down(lg) {
+    padding: 70px 30px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 40px 15px 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 15px;
+  }
+
+  &.shrink {
+    background-color: $color-dark-blue;
+    padding: 15px 8.33%;
+    -webkit-box-shadow: 0px 30px 30px -27px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 30px 30px -27px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 30px 30px -27px rgba(0, 0, 0, 0.25);
+
+    @include media-breakpoint-down(lg) {
+      padding: 15px 30px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 15px;
+    }
+
+    .hamburger {
+      span {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .header {
+      &__navigation {
+        .navigation {
+          &__menu {
+            li {
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   &__navigation {
+    @include media-breakpoint-down(sm) {
+      transform: translate(100%, 0%);
+      background-color: $color-dark-blue;
+      position: fixed;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      top: 0;
+      right: 0;
+      width: 320px;
+      height: 100vh;
+      transition: all 150ms linear;
+    }
+
+    &.open {
+      @include media-breakpoint-down(sm) {
+        transform: translate(0, 0);
+      }
+    }
+
     .navigation {
       &__menu {
         list-style-type: none;
@@ -17,11 +91,27 @@
         justify-content: flex-end;
         align-items: center;
 
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+        }
+
         li {
           margin-right: 55px;
 
+          @include media-breakpoint-down(md) {
+            margin-right: 35px;
+          }
+
+          @include media-breakpoint-down(sm) {
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
+
           &:last-of-type {
             margin-right: 0;
+            margin-bottom: 0;
           }
 
           a {
@@ -30,6 +120,10 @@
             transition: all 0.25s;
             padding-bottom: 5px;
             border-bottom: 1px solid transparent;
+
+            @include media-breakpoint-down(sm) {
+              color: #fff;
+            }
 
             &:hover {
               color: $color-light-blue;

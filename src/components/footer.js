@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container-fluid">
         <div className="whole-wrapper">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-xl-7 col-lg-8">
               <div className="footer__menu-container menu-container">
                 <div className="menu-container__single-menu single menu">
                   <p className="single-menu__title">Plans</p>
@@ -102,7 +102,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-5">
+            <div className="col-xl-5 col-lg-4">
               <div className="footer__inner inner">
                 <p className="inner__title">About Us</p>
                 <p className="inner__desc">
