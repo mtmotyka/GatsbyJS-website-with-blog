@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
           <div className="footer__copyrights copyrights">
             <p className="copyrights__text">
-              @2019. Hogash Studio ~ All Rights Reserved.
+              @2020. Built by <a href="https://devmatte.com">devmatte.com</a>
             </p>
           </div>
         </div>
