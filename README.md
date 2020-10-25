@@ -3,7 +3,9 @@
   Pojedyncza strona z blogiem na React + GatsbyJS + Wordpress
 </h1>
 
-**English version below**
+```diff
++ English version below
+```
 
 Pierwszy niekomercyjny projekt postawiony na Reactcie wraz z GatsbyJS. Projekt zacząłem tworzyć po to, aby potrenować naukę Reacta. Na podstawie darmowego PSDka powstała strona główna, strona blogowa oraz strona wpisu.
 
@@ -22,7 +24,10 @@ _Work In Proges_
 
 ---
 
-**English version**
+```diff
++ English version
+```
+
 <br />
 <br />
 
