@@ -1,49 +1,55 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, StaticQuery } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SubpageHeader from '../components/subpageHeader';
 
-const Blog = () => {
+const Blog = ({ blogPosts }) => {
   return (
     <Layout>
       <SEO title="Blog" />
+
       <SubpageHeader title="Blog" />
 
       <section className="blog-section">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
-              <div className="single-post">
-                <div className="single-post__thumbnail"></div>
-                <div className="single-post__content-container content-container">
-                  <div className="short-info">
-                    <p className="short-info__text text text--author">
-                      Andrei Fredy
-                    </p>
-                    <p className="short-info__text text text--date">
-                      April 14, 2019
-                    </p>
-                    <p className="short-info__text text text--tag">
-                      Digital Marketing
-                    </p>
+              {blogPosts.edges.map(({ node }) => (
+                <div className="single-post">
+                  <div
+                    className="single-post__thumbnail"
+                    style={{
+                      backgroundImage: `url(${node.featuredImage.node.sourceUrl})`,
+                    }}
+                  ></div>
+                  <div className="single-post__content-container content-container">
+                    <div className="short-info">
+                      <p className="short-info__text text text--author">
+                        {node.author.node.name}
+                      </p>
+                      <p className="short-info__text text text--date">
+                        {node.date.split('T')[0].split('-').reverse().join('.')}
+                      </p>
+                      <p className="short-info__text text text--tag">
+                        {node.categories.nodes[0].name}
+                      </p>
+                    </div>
+                    <h2 className="content-container__title">{node.title}</h2>
+                    <p
+                      className="content-container__desc"
+                      dangerouslySetInnerHTML={{ __html: node.excerpt }}
+                    />
+                    <Link
+                      to={`/blog/${node.slug}`}
+                      className="content-container__read-more-button"
+                    >
+                      Read more
+                    </Link>
                   </div>
-                  <h2 className="content-container__title">
-                    How to save time using Social Media Management? - 5 Easy steps
-                  </h2>
-                  <p className="content-container__desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse.{' '}
-                  </p>
-                  <Link to="/" className="content-container__read-more-button">
-                    Read more
-                  </Link>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -52,4 +58,40 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        blogPosts: allWpPost {
+          edges {
+            node {
+              title
+              uri
+              id
+              author {
+                node {
+                  name
+                }
+              }
+              categories {
+                nodes {
+                  name
+                }
+              }
+              date
+              excerpt
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              content
+              slug
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Blog {...data} />}
+  />
+);

@@ -1,30 +1,22 @@
-.blog-section {
-  .single-post {
-    margin-bottom: 70px;
-    -webkit-box-shadow: 0px 0px 44px -20px rgba(0, 0, 0, 0.58);
-    -moz-box-shadow: 0px 0px 44px -20px rgba(0, 0, 0, 0.58);
-    box-shadow: 0px 0px 44px -20px rgba(0, 0, 0, 0.58);
+.single-post {
+  padding: 0 25%;
 
+  .post-content {
     &__thumbnail {
       width: 100%;
       min-height: 385px;
-      background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
+      background-repeat: no-repeat;
     }
 
-    &__content-container {
-      padding: 40px 30px;
+    &__short-info {
       display: flex;
-      flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
+      margin: 30px 0;
 
       .short-info {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
         &__text {
           font-size: 14px;
           color: $color-header;
@@ -66,29 +58,29 @@
           }
         }
       }
+    }
 
-      .content-container {
-        &__title {
-          font-size: 30px;
-          font-weight: $semi-bold;
-          margin: 30px 0;
-          line-height: 1.7;
-        }
+    &__title {
+      font-size: 30px;
+      font-weight: $semi-bold;
+      margin: 30px 0;
+      line-height: 1.7;
+    }
 
-        &__desc {
-          margin-bottom: 30px;
-          line-height: 2.1;
-          font-size: 16px;
-          color: #808080;
-          font-weight: $light;
-        }
+    &__text {
+      h2 {
+        margin: 40px 0 20px;
+      }
 
-        &__read-more-button {
-          text-decoration: underline;
-          text-transform: uppercase;
-          font-size: 16px;
-          color: $color-header;
-        }
+      h3 {
+        margin: 40px 0 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 30px auto;
       }
     }
   }
