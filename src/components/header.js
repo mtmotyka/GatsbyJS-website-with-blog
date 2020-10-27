@@ -28,7 +28,10 @@ const Header = () => {
     <header className="header">
       <div className="logo-container">
         <a href="/">
-          <img src={require('../assets/img/logo.png')} alt="Kallyas.pl" />
+          <img
+            src={require('../assets/img/logo.png')}
+            alt="devmatte-react-blog.netlify.app"
+          />
         </a>
       </div>
       <nav
@@ -38,19 +41,19 @@ const Header = () => {
       >
         <ul className="navigation__menu">
           <li>
-            <a href="#services">Services</a>
+            <a href="/#services">Services</a>
           </li>
           <li>
-            <a href="#Platform">Platform</a>
+            <a href="/#platform">Platform</a>
           </li>
           <li>
-            <a href="#Facilities">Facilities</a>
+            <a href="/#facilities">Facilities</a>
           </li>
           <li>
-            <a href="#Plans">Plans</a>
+            <a href="/#plans">Plans</a>
           </li>
           <li>
-            <a href="#Contact">Contact</a>
+            <a href="/#contact">Contact</a>
           </li>
           <li>
             <Link to="/blog">Blog</Link>

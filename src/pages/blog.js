@@ -15,8 +15,8 @@ const Blog = ({ blogPosts }) => {
       <section className="blog-section">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-6">
-              {blogPosts.edges.map(({ node }) => (
+            {blogPosts.edges.map(({ node }) => (
+              <div className="col-lg-6">
                 <div className="single-post">
                   <div
                     className="single-post__thumbnail"
@@ -36,7 +36,9 @@ const Blog = ({ blogPosts }) => {
                         {node.categories.nodes[0].name}
                       </p>
                     </div>
-                    <h2 className="content-container__title">{node.title}</h2>
+                    <Link to={`/blog/${node.slug}`}>
+                      <h2 className="content-container__title">{node.title}</h2>
+                    </Link>
                     <p
                       className="content-container__desc"
                       dangerouslySetInnerHTML={{ __html: node.excerpt }}
@@ -49,8 +51,8 @@ const Blog = ({ blogPosts }) => {
                     </Link>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

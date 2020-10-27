@@ -1,6 +1,14 @@
 .single-post-section {
   padding: 0 25%;
 
+  @include media-breakpoint-down(lg) {
+    padding: 0 30px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 0 15px;
+  }
+
   .post-content {
     &__thumbnail {
       width: 100%;
@@ -65,6 +73,10 @@
       font-weight: $semi-bold;
       margin: 30px 0;
       line-height: 1.7;
+
+      @include media-breakpoint-down(xs) {
+        font-size: 24px;
+      }
     }
 
     &__text {

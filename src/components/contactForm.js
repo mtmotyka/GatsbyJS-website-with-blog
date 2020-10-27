@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 import axios from 'axios';
 
 const ContactForm = () => {
@@ -34,6 +35,7 @@ const ContactForm = () => {
       .then(res => {
         console.log('Submit success');
         resetForm();
+        navigate('/thank-you');
       })
       .catch(() => {
         console.log('Submit error');

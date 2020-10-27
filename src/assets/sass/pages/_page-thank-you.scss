@@ -1,0 +1,22 @@
+.thank-you-section {
+  height: 100vh;
+  background-image: url(../img/hero-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    margin: 0px auto 50px;
+    font-size: 20px;
+    color: $color-header;
+  }
+}

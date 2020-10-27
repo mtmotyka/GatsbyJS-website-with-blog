@@ -8,6 +8,7 @@ import { Link } from 'gatsby';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <span className="anchor" id="home"></span>
     <section className="hero-section">
       <div className="container-fluid">
         <div className="row align-items-center">
@@ -49,6 +50,7 @@ const IndexPage = () => (
       </div>
     </section>
 
+    <span className="anchor" id="services"></span>
     <section className="help-section">
       <div className="container-fluid">
         <div className="row align-items-center">
@@ -111,6 +113,7 @@ const IndexPage = () => (
       </div>
     </section>
 
+    <span className="anchor" id="platform"></span>
     <section className="video-section">
       <div className="container-fluid">
         <h2 className="video-section__title text-center small color-white">
@@ -130,6 +133,7 @@ const IndexPage = () => (
       </div>
     </section>
 
+    <span className="anchor" id="facilities"></span>
     <section className="about-section">
       <div className="container-fluid">
         <h2 className="about-section__title small text-center">How easy can be?</h2>
@@ -249,6 +253,7 @@ const IndexPage = () => (
       </div>
     </section>
 
+    <span className="anchor" id="plans"></span>
     <section className="pricing-section">
       <div className="container-fluid">
         <h2 className="small text-center pricing-section__title">
@@ -330,6 +335,8 @@ const IndexPage = () => (
         </div>
       </div>
     </section>
+
+    <span className="anchor" id="contact"></span>
     <section className="contact-section">
       <div className="container-fluid">
         <h2 className="contact-section__title text-center">Contact Us</h2>
