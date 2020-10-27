@@ -27,7 +27,7 @@ const ContactForm = () => {
     axios({
       method: 'post',
       url:
-        'http://react-blog.devmatte.com/wp-json/contact-form-7/v1/contact-forms/8/feedback/',
+        'https://react-blog.devmatte.com/wp-json/contact-form-7/v1/contact-forms/8/feedback/',
       data: formData,
       headers: { 'Content-Type': 'multipart/form-data' },
     })
