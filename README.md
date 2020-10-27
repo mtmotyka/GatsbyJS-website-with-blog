@@ -11,7 +11,7 @@ Pierwszy niekomercyjny projekt postawiony na Reactcie wraz z GatsbyJS. Projekt z
 
 Moim głównym celem - jak już wczesniej wspomniałem - było poćwiczyć bardziej backend Reacta, Gatsbiego i GraphQL niż sam front (HTML i SCSS). Dlatego też nie skupiałem się mocno na designie, a bardziej na połączeniu projektu z Wordpressem, przetwarzaniu formularzy i wyświetlaniu postów blogowych z WPka.
 
-Front aplikacji jest postawiony na [Netlify](https://www.netlify.com/), natomiast backend, czyli Wordpress stoi na subdomenie [react-blog.devmatte.com](http://www.react-blog.devmatte.com/), na nazwa.pl, na tym samym serwerze co moje portfolio.
+Front aplikacji jest postawiony na [Netlify](https://www.netlify.com/), natomiast backend, czyli Wordpress stoi na subdomenie [react-blog.devmatte.com](https://www.react-blog.devmatte.com/), na nazwa.pl, na tym samym serwerze co moje portfolio.
 <br />
 <br />
 
@@ -39,7 +39,7 @@ First non-commercial project powered by React with GatsbyJS. I made this project
 
 My main goal - as I mentioned before - was to practice back-end of React, GatsbyJS and GraphQL more than front-end (HTML and SCSS). Therefore, my focus was not on design, but more on connecting project with Wordpress, processing forms and displaying blog's posts from WP.
 
-Front of the app is powered by [Netlify](https://www.netlify.com/) and backend (Wordpress) is hosted on [react-blog.devmatte.com](http://www.react-blog.devmatte.com/) by nazwa.pl, on the smae server where is my portfolio
+Front of the app is powered by [Netlify](https://www.netlify.com/) and backend (Wordpress) is hosted on [react-blog.devmatte.com](https://www.react-blog.devmatte.com/) by nazwa.pl, on the smae server where is my portfolio
 
 <br />
 <br />

@@ -5,14 +5,14 @@ import SEO from '../components/seo';
 import SubpageHeader from '../components/subpageHeader';
 
 const Post = ({ pageContext }) => {
-  const { title, content, thumbnail, date, author, categories } = pageContext;
+  const { title, content, thumbnail, date, author } = pageContext;
   return (
     <Layout>
       <SEO title="test" />
 
       <SubpageHeader />
 
-      <section className="single-post">
+      <section className="single-post-section">
         <div className="post-content">
           <div
             className="post-content__thumbnail"

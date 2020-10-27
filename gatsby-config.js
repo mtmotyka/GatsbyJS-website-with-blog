@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: process.env.WPGRAPHQL_URL || `http://react-blog.devmatte.com/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://react-blog.devmatte.com/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
