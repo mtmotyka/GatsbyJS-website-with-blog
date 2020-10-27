@@ -17,7 +17,7 @@ Front aplikacji jest postawiony na [Netlify](https://www.netlify.com/), natomias
 
 ## 🚀 Demo
 
-_Work In Proges_
+:arrow_forward: [DEVMATTE React Blog](https://devmatte-react-blog.netlify.app/)
 
 <br />
 <br />
@@ -46,7 +46,7 @@ Front of the app is powered by [Netlify](https://www.netlify.com/) and backend (
 
 ## 🚀 Demo
 
-_Work In Proges_
+:arrow_forward: [DEVMATTE React Blog](https://devmatte-react-blog.netlify.app/)
 
 <br />
 <br />
